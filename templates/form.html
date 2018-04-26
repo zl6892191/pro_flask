@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交</title>
+</head>
+<body>
+<form method="post">
+    {{ form.crsf_token() }}
+    <label>用户名：</label><input type="text" name="username" placeholder="输入用户名"><br>
+    <label>密码：</label><input type="password" name="pswd1" placeholder="请输入密码"><br>
+    <label>确认密码：</label><input type="password" name="pswd2" placeholder="再次输入密码"><br>
+    <input type="submit" value="注册">
+    <hr>
+    {% for i in get_flashed_messages() %}
+    {{ i }}
+    {% endfor%}
+</form>
+</body>
+</html>

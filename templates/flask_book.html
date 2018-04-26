@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理</title>
+</head>
+<body>
+<form method="post">
+    <label>作者：</label><input type="text" name="username"><br>
+    <label>书名：</label><input type="text" name="bookname"><br>
+    <input type="submit" value="添加">
+</form>
+<hr>
+    {% for i in get_flashed_messages() %}
+    {{ i }}
+    {% endfor %}
+<hr>
+<ul>
+    {% for i in author %}
+    <li>{{ i }}</li>
+        <ul>
+            {% for j in i.au_book %}
+            <li>{{ j }}</li>
+            {% endfor%}
+        </ul>
+    {% endfor%}
+</ul>
+</body>
+</html>

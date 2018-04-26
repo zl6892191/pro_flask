@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板测试</title>
+</head>
+<body>
+<h1>{{ str | reverse }}</h1>
+<h1>{{ list1 | listReverse}}</h1>
+<hr>
+<h1>{{ my_int }}</h1>
+<hr>
+<h1>{{ my_dict }}</h1>
+<hr>
+<h1>
+    {% for i in list1 if i>5 %}
+    {{ i }}
+    {% endfor %}
+</h1>
+<h1>
+    {{ g.name }}
+    {{ request.method }}
+    {{ config.DEBUG }}
+</h1>
+<a href="{{ url_for('order', order_id = 123)}}"> 点击进入</a>
+<hr>
+<h1>
+    {% for i in get_flashed_messages() %}
+    {{ i }}
+    {% endfor %}
+</h1>
+</body>
+</html>
